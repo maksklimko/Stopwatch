@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:stopwatch/core/router/router_config.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(App());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class App extends StatelessWidget {
+  final _appRouter = AppRouter();
+
+  App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
     );
   }
 }
