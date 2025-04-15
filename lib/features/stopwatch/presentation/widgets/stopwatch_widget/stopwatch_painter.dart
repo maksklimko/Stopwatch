@@ -146,7 +146,7 @@ class StopwatchPainter extends CustomPainter {
         center.dx + pointsRadius * cos(angle - pi / 2),
         center.dy + pointsRadius * sin(angle - pi / 2),
       );
-      if (currentSecond == i + 1) {
+      if (currentSecond == i) {
         canvas.drawCircle(pointOffset, 5, markerPaint);
       } else {
         canvas.drawCircle(pointOffset, 1, markerPaint);
@@ -184,5 +184,5 @@ class StopwatchPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
