@@ -96,3 +96,89 @@ extension StopwatchThemeBuildContextProps on BuildContext {
   Color get fillColor => stopwatchTheme.fillColor;
   TextStyle get timeTextStyle => stopwatchTheme.timeTextStyle;
 }
+
+mixin _$ToggleButtonThemeTailorMixin on ThemeExtension<ToggleButtonTheme> {
+  Color get enabledColor;
+  Color get disabledColor;
+  Color get borderColor;
+  Color get primaryShadowColor;
+  Color get secondaryShadowColor;
+  TextStyle get textStyle;
+
+  @override
+  ToggleButtonTheme copyWith({
+    Color? enabledColor,
+    Color? disabledColor,
+    Color? borderColor,
+    Color? primaryShadowColor,
+    Color? secondaryShadowColor,
+    TextStyle? textStyle,
+  }) {
+    return ToggleButtonTheme(
+      enabledColor: enabledColor ?? this.enabledColor,
+      disabledColor: disabledColor ?? this.disabledColor,
+      borderColor: borderColor ?? this.borderColor,
+      primaryShadowColor: primaryShadowColor ?? this.primaryShadowColor,
+      secondaryShadowColor: secondaryShadowColor ?? this.secondaryShadowColor,
+      textStyle: textStyle ?? this.textStyle,
+    );
+  }
+
+  @override
+  ToggleButtonTheme lerp(
+      covariant ThemeExtension<ToggleButtonTheme>? other, double t) {
+    if (other is! ToggleButtonTheme) return this as ToggleButtonTheme;
+    return ToggleButtonTheme(
+      enabledColor: Color.lerp(enabledColor, other.enabledColor, t)!,
+      disabledColor: Color.lerp(disabledColor, other.disabledColor, t)!,
+      borderColor: Color.lerp(borderColor, other.borderColor, t)!,
+      primaryShadowColor:
+          Color.lerp(primaryShadowColor, other.primaryShadowColor, t)!,
+      secondaryShadowColor:
+          Color.lerp(secondaryShadowColor, other.secondaryShadowColor, t)!,
+      textStyle: TextStyle.lerp(textStyle, other.textStyle, t)!,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ToggleButtonTheme &&
+            const DeepCollectionEquality()
+                .equals(enabledColor, other.enabledColor) &&
+            const DeepCollectionEquality()
+                .equals(disabledColor, other.disabledColor) &&
+            const DeepCollectionEquality()
+                .equals(borderColor, other.borderColor) &&
+            const DeepCollectionEquality()
+                .equals(primaryShadowColor, other.primaryShadowColor) &&
+            const DeepCollectionEquality()
+                .equals(secondaryShadowColor, other.secondaryShadowColor) &&
+            const DeepCollectionEquality().equals(textStyle, other.textStyle));
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      runtimeType.hashCode,
+      const DeepCollectionEquality().hash(enabledColor),
+      const DeepCollectionEquality().hash(disabledColor),
+      const DeepCollectionEquality().hash(borderColor),
+      const DeepCollectionEquality().hash(primaryShadowColor),
+      const DeepCollectionEquality().hash(secondaryShadowColor),
+      const DeepCollectionEquality().hash(textStyle),
+    );
+  }
+}
+
+extension ToggleButtonThemeBuildContextProps on BuildContext {
+  ToggleButtonTheme get toggleButtonTheme =>
+      Theme.of(this).extension<ToggleButtonTheme>()!;
+  Color get enabledColor => toggleButtonTheme.enabledColor;
+  Color get disabledColor => toggleButtonTheme.disabledColor;
+  Color get borderColor => toggleButtonTheme.borderColor;
+  Color get primaryShadowColor => toggleButtonTheme.primaryShadowColor;
+  Color get secondaryShadowColor => toggleButtonTheme.secondaryShadowColor;
+  TextStyle get textStyle => toggleButtonTheme.textStyle;
+}

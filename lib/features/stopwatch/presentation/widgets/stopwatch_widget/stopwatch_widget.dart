@@ -8,12 +8,17 @@ class StopwatchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: AspectRatio(
-        aspectRatio: 1,
-        child: CustomPaint(
-          painter: StopwatchPainter(
-              theme: context.stopwatchTheme,
-              elapsedTime: Duration(minutes: 2, seconds: 3)),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 350,
+        ),
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: CustomPaint(
+            painter: StopwatchPainter(
+                theme: context.stopwatchTheme,
+                elapsedTime: Duration(minutes: 2, seconds: 3)),
+          ),
         ),
       ),
     );

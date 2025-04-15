@@ -9,14 +9,26 @@ class AppTheme {
   static ThemeData get dark =>
       ThemeData(scaffoldBackgroundColor: AppColors.codGray, extensions: [
         StopwatchTheme(
-            accentGradientStartColor: AppColors.flamingo,
-            accentGradientEndColor: AppColors.gamboge,
-            shadowColor: AppColors.white,
-            strokeColor: AppColors.white,
-            fillColor: AppColors.white,
-            timeTextStyle: GoogleFonts.lato(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-                color: AppColors.springWood))
+          accentGradientStartColor: AppColors.flamingo,
+          accentGradientEndColor: AppColors.gamboge,
+          shadowColor: AppColors.white,
+          strokeColor: AppColors.white,
+          fillColor: AppColors.white,
+          timeTextStyle: GoogleFonts.lato(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+              color: AppColors.springWood),
+        ),
+        ToggleButtonTheme(
+          enabledColor: AppColors.royalBlue,
+          disabledColor: AppColors.cornflowerBlue,
+          primaryShadowColor: AppColors.dodgerBlue,
+          secondaryShadowColor: AppColors.governorBay.withAlpha(125),
+          borderColor: AppColors.white.withAlpha(30),
+          textStyle: GoogleFonts.lato(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+              color: AppColors.springWood),
+        )
       ]);
 }
