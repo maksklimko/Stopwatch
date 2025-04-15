@@ -12,6 +12,8 @@ dependencies:
   flutter_bloc: ^9.1.0
   easy_localization: ^3.0.7+1
   auto_route: ^10.0.1
+  theme_tailor: ^3.0.2
+  theme_tailor_annotation: ^3.0.2
 
 dev_dependencies:
   flutter_test:

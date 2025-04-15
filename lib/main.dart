@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:stopwatch/core/constants/app_constants.dart';
+import 'package:stopwatch/core/constants/app_theme.dart';
 import 'package:stopwatch/core/router/router_config.dart';
 
 void main() async {
@@ -27,6 +28,7 @@ class App extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
+      theme: AppTheme.dark,
       routerConfig: _appRouter.config(),
     );
   }
