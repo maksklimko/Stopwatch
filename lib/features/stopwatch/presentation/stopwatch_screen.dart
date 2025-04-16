@@ -11,28 +11,33 @@ class StopwatchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(40),
-        child: Column(
-          children: [
-            StopwatchWidget(),
-            Spacer(),
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 400),
-              child: AppToggleButton(
-                enabledText: 'start',
-                disabledText: 'stop',
-                onChanged: (isEnabled) {
-                  if (isEnabled) {
-                    context.read<StopwatchCubit>().pause();
-                  } else {
-                    context.read<StopwatchCubit>().start();
-                  }
-                },
+    final cubit = StopwatchCubit();
+
+    return BlocProvider<StopwatchCubit>(
+      create: (ctx) => cubit,
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(40),
+          child: Column(
+            children: [
+              StopwatchWidget(),
+              Spacer(),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 400),
+                child: AppToggleButton(
+                  enabledText: 'start',
+                  disabledText: 'stop',
+                  onChanged: (isEnabled) {
+                    if (isEnabled) {
+                      cubit.pause();
+                    } else {
+                      cubit.start();
+                    }
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
