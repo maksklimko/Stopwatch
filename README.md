@@ -1,5 +1,5 @@
 # Stopwatch
-A sleek Flutter stopwatch app built with Cubit and clean architecture, designed for scalability and smooth state management
+A minimal Flutter stopwatch app built with Cubit and clean architecture, designed for scalability
 ## Core packages
 1. **flutter_bloc**(Cubit) - state management
 2. **equatable** - equality check
