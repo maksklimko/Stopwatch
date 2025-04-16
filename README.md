@@ -1,3 +1,6 @@
 # stopwatch
 
-A new Flutter project.
+## Core packages
+
+## Preview
+
